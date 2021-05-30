@@ -9,15 +9,7 @@ class MyDocument extends Document {
 		return { ...initialProps };
 	}
 
-	setServiceWorker() {
-		const environment = process.env.NODE_ENV;
-		const publicUrl = environment === 'production' ? process.env.PUBLIC_URL : 'http://localhost:3000';
 
-		return {
-			__html: initiateServiceWorker(environment, publicUrl)
-		}
-
-	}
 	
 
 	render() {

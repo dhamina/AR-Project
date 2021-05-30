@@ -6,7 +6,6 @@
     "display": "browser",
     "Scope": "/",
     "start_url": "/",
-    "gcm_sender_id": "",
     "icons": [
       {
         "src": "/favicon.ico",
