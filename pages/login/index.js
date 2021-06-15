@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [Username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function validateForm() {
@@ -18,12 +18,12 @@ export default function Login() {
     <div className="Login">
       <form onSubmit={handleSubmit}>
       
-          <label>Email</label>
+          <label>Username</label>
           <input
             autoFocus
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="Username"
+            value={Username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <label> Password </label>
           <input
