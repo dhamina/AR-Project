@@ -20,14 +20,14 @@ export default function Login() {
   event.preventDefault();
   let err = {}
   if(password.length<4 || password.length>15){
-    err={password:'Minimum password length is 4 and maximum is 15'}
+    err={password:'Password should be minimum 4 characters long'}
     setErrors(err)
   }
   const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if(!username.match(emailRegexp)){
       setErrors({
         ...err,
-        email:'Invalid Email'})
+        email:'Invalid email address'})
       return 
   }
   try{
