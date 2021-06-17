@@ -61,16 +61,17 @@ export default function Login() {
         <form>
        
           <div className="form-group">
-            <label for="email">Email</label>
-            <input  autoFocus
+            {/* <label for="email">Email</label> */}
+            <input placeholder="Email"  autoFocus
             type="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)} id="username" />
             <p className="error">{errors.email}</p>
           </div>
           <div className="form-group">
-            <label for="password">Password</label>
+            {/* <label for="password">Password</label> */}
             <input 
+             placeholder="Password" 
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -128,9 +129,15 @@ export default function Login() {
       .form-wrap .form-group input {
         width: 100%;
         padding: 10px;
-        border: #ddd 1px solid;
-        border-radius: 5px;
+            border: none;
+    border-bottom: #3C88DC 2px solid;
+
       }
+      .form-group input ::placeholder {
+  color: #3C88DC ;
+  text-transform:uppercase;
+  opacity: 1; 
+}
 
       .btn {
         /* position:absolute;
