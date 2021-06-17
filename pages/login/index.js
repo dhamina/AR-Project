@@ -18,7 +18,7 @@ export default function Login() {
 
   const handleSubmit= async(event)=>{
   event.preventDefault();
-  let err = {}
+  let err =''
   if(password.length<4 || password.length>15){
     err={password:'Password should be minimum 4 characters long'}
     setErrors(err)
@@ -29,6 +29,9 @@ export default function Login() {
         ...err,
         email:'Invalid email address'})
       return 
+  }
+  if(err){
+    return
   }
   try{
     setLoading(true)
