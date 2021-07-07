@@ -75,7 +75,7 @@ export default function Home(props) {
         {`
           .tlecn {
             display: flex;
-            justify-content:center;
+            justify-content: center;
             border-bottom: 1px solid grey;
             border-top: 1px solid grey;
           }
@@ -125,6 +125,10 @@ Home.getInitialProps = async (ctx) => {
   console.log(user);
   try {
     const books = await getBooks();
+    return {
+      user,
+      books: books.data,
+    };
   } catch (e) {}
   const books = [
     {
