@@ -43,7 +43,7 @@ export default function Home(props) {
           Text Book
         </p>
 
-        <p
+        {/* <p
           className={`tlecn__item ${tab === 1 ? "active" : ""}`}
           onClick={() => setTab(1)}
         >
@@ -55,7 +55,7 @@ export default function Home(props) {
             )}{" "}
           </span>
           Story Book
-        </p>
+        </p> */}
       </div>
       <div>
         {books.map((r) => {
