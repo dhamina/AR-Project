@@ -6,3 +6,6 @@ export const login = (payload) => {
 export const getBooks = ()=>{
   return API.get('/listbooks')
 }
+export const getBooksConcepts = (payload)=>{
+  return API.post('/listcontents',payload)
+}

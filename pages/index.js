@@ -123,6 +123,7 @@ export default function Home(props) {
 Home.getInitialProps = async (ctx) => {
   const user = nextCookie(ctx);
   console.log(user);
+
   try {
     const books = await getBooks();
     return {
