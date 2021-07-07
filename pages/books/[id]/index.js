@@ -1,19 +1,25 @@
+import { getBooksConcepts } from "../../../api/auth";
+
 export default function ListOfConcepts(props) {
-    console.log(props)
+    const { contents,bookName } = props
     return (
-
-
         <div>
-
-            <h1>Textbook - Physics</h1>
+            <h1 className="list__tle">Textbook - {bookName}</h1>
             <div className="list__cn">
-            <div className="list__cn-item"> Gravity  </div>
-            <div className="list__cn-item"> Heat </div>
-            <div className="list__cn-item"> Wave  </div>
-</div>
+                {
+                    contents.map((r) => {
+                        return (
+                            <div className="list__cn-item"> {r.name}  </div>
+                        )
+                    })
+                }
+            </div>
             <style jsx>
                 {
                     `
+                    .list__tle{
+                        margin: 20px 10px;
+                    }
                     .list__cn{
                         display: grid;
                         grid-template-columns: 45% 45%;
@@ -30,9 +36,7 @@ export default function ListOfConcepts(props) {
                         justify-content:center;
                         height: 100px;
                         align-items: center;
-                    }
-            
-              
+                    }   
             `
                 }
             </style>
@@ -41,8 +45,15 @@ export default function ListOfConcepts(props) {
     )
 }
 ListOfConcepts.getInitialProps = async (ctx) => {
-    const { id } = ctx.query
+    const { id } = ctx.query;
+    const payload = {
+        _id: id,
+    };
+    const bookDetails = await getBooksConcepts(payload);
+    const { contents,bookName } = bookDetails.data
     return {
-        id
-    }
-}
+        id,
+        contents,
+        bookName
+    };
+};
