@@ -70,8 +70,6 @@ export default function Home(props) {
             </Link>
           );
         })}
-        <iframe id="51a9ee16-f90f-42f6-acfa-3ecf55e0b288" src="https://www.vectary.com/viewer/v1/?model=51a9ee16-f90f-42f6-acfa-3ecf55e0b288&env=studio3" frameborder="0" width="100%" height="480"></iframe>
-        <iframe id="51a9ee16-f90f-42f6-acfa-3ecf55e0b288" src="https://www.vectary.com/viewer/v1/?model=51a9ee16-f90f-42f6-acfa-3ecf55e0b288&env=studio3" frameborder="0" width="100%" height="480"></iframe>
       </div>
       <style jsx>
         {`
