@@ -7,23 +7,24 @@ export default function ListOfConcepts(props) {
     const { contents,bookName } = props
     const [showPop,setShowPop] = useState(false)
     const popClose = ()=>{
-        setShowPop(false)
+        // setShowPop(false)
+        window.location.href=('https://vikkysri.blob.core.windows.net/$web/Build/index.html')
     }
     return (
         <div>
             <h1 className="list__tle">Textbook - {bookName}</h1>
             <div className="list__cn">
-                  <Popup isOpen={ showPop } onClose={()=>popClose()}>
+                  {/* <Popup isOpen={ showPop } onClose={()=>popClose()}>
                <section className="video">
                 <iframe title="magzter" className="videoIFrame" src="https://vikkysri.blob.core.windows.net/$web/Build/index.html" width="100%" height="388px" frameBorder="0" allowFullScreen />
                 </section>
-  </Popup>
+  </Popup> */}
 
                
                 {
                     contents.map((r) => {
                         return (
-                            <div onClick={()=>setShowPop(true)} className="list__cn-item"> {r.name}  </div>
+                            <div onClick={()=>popClose()} className="list__cn-item"> {r.name}  </div>
                         )
                     })
                 }
