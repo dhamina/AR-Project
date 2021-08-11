@@ -1,15 +1,29 @@
+import { useState } from "react";
 import { getBooksConcepts } from "../../../api/auth";
+
 
 export default function ListOfConcepts(props) {
     const { contents,bookName } = props
+    const [showPop,setShowPop] = useState(false)
+    const popClose = ()=>{
+        // setShowPop(false)
+        window.location.href=('https://vikkysri.blob.core.windows.net/$web/Build/index.html')
+    }
     return (
         <div>
             <h1 className="list__tle">Textbook - {bookName}</h1>
             <div className="list__cn">
+                  {/* <Popup isOpen={ showPop } onClose={()=>popClose()}>
+               <section className="video">
+                <iframe title="magzter" className="videoIFrame" src="https://vikkysri.blob.core.windows.net/$web/Build/index.html" width="100%" height="388px" frameBorder="0" allowFullScreen />
+                </section>
+  </Popup> */}
+
+               
                 {
                     contents.map((r) => {
                         return (
-                            <div className="list__cn-item"> {r.name}  </div>
+                            <div onClick={()=>popClose()} className="list__cn-item"> {r.name}  </div>
                         )
                     })
                 }
@@ -24,6 +38,7 @@ export default function ListOfConcepts(props) {
                         display: grid;
                         grid-template-columns: 45% 45%;
                         padding:10px;
+                        cursor:pointer;
                     }
                     .list__cn-item{
                         width: 95%;
